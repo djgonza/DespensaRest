@@ -3,6 +3,8 @@ const productoModel = require('models/producto');
 
 module.exports = (req, res) => {
 
+	console.log("peticion");
+
 	productoModel.find({})
 	.then(productos => {
 		/*res.send({
@@ -10,6 +12,7 @@ module.exports = (req, res) => {
 			schema: leerPropiedadesSchema(productoModel.schema),
 			data: productos
 		});*/
+		console.log(productos);
 		res.send(productos);
 	})
 	.catch(err => {
