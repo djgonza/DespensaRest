@@ -7,7 +7,6 @@ module.exports = (req, res) => {
 	articulosModel
 		.update({_id: req.body.id}, { $set: req.body})
 		.then(validate => {
-			console.log("updated", validate);
 			res.send(validate);
 		})
 		.catch(err => {

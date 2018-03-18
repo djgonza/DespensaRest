@@ -7,7 +7,6 @@ module.exports = (req, res) => {
 	productoModel
 		.remove({_id: req.body.id})
 		.then(validate => {
-			console.log("delete", validate);
 			res.send(validate);
 		})
 		.catch(err => {
