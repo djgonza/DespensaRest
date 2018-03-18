@@ -4,10 +4,7 @@ const Producto = mongoose.model('Producto',
 { 
 	nombre: String,
 	codigo: String,
-	descripcion: {
-		type: String,
-		default: ''
-	},
+	descripcion: String,
 	imagen: String
 });
 
