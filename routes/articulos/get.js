@@ -2,7 +2,9 @@ const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	articulosModel.find({producto: req.body.id})
+	console.log(req.query);
+
+	articulosModel.find({producto: req.query.id})
 	.then(articulos => {
 		res.send(articulos);
 	})
