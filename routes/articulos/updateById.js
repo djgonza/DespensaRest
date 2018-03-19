@@ -2,8 +2,6 @@ const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	console.log(req.body);
-
 	articulosModel
 		.update({_id: req.body.id}, { $set: req.body})
 		.then(validate => {

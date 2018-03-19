@@ -2,12 +2,10 @@ const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	console.log(req.body);
-
 	articulosModel
-		.remove({_id: req.body.id})
+		.update({_id: req.body.id}, { cantidad: req.body.cantidad})
 		.then(validate => {
-			res.send(validate);
+			res.send(req.body);
 		})
 		.catch(err => {
 			console.log("Error: ".red,  err.message.red);

@@ -2,10 +2,8 @@ const productoModel = require('models/producto.js');
 
 module.exports = (req, res) => {
 
-	console.log(req.body);
-
 	productoModel
-		.remove({_id: req.body.id})
+		.update({_id: req.body.id}, { $set: req.body})
 		.then(validate => {
 			res.send(validate);
 		})
