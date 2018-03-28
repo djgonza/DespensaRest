@@ -3,7 +3,7 @@ const articulosModel = require('models/articulos.js');
 module.exports = (req, res) => {
 
 	articulosModel
-		.update({_id: req.body.id}, { cantidad: req.body.cantidad})
+		.update({_id: req.body._id}, { cantidad: req.body.cantidad})
 		.then(validate => {
 			res.send(req.body);
 		})

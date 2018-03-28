@@ -1,14 +1,12 @@
-const bluebird = require("bluebird");
-const productoModel = require('models/producto');
 const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	productoModel.find({})
+	articulosModel.find({})
 	.lean()
 	.exec()
-	.then(productos => {
-		return productos;
+	.then(articulos => {
+		return articulos;
 		/*return bluebird.map(productos, (producto) => {
 			return articulosModel
 				.find({producto: producto._id})
@@ -21,8 +19,8 @@ module.exports = (req, res) => {
 				});
 		});*/
 	})
-	.then(productos => {
-		res.send(productos)
+	.then(articulos => {
+		res.send(articulos)
 	})
 	.catch(err => {
 		res.send(err);
