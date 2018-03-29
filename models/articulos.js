@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const Articulos = mongoose.model('Articulos', 
 { 
 	fechaCaducidad: Date,
-	ubicacion: "String",
+	ubicacion: Schema.Types.ObjectId,
 	producto: Schema.Types.ObjectId,
 	cantidad: Number
 });
