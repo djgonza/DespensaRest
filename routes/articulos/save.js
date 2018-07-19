@@ -2,17 +2,18 @@ const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	var newArticulo = new articulosModel(req.body);
+	var newArticulo = req.body;
+	newArticulo.user = req.userId;
 
-	newArticulo
-		.save()
-		.then(createdArticulo => {
-			res.send(createdArticulo);
-		})
-		.catch(err => {
-			console.log(err);
-			res.send(err);
-		})
+	new articulosModel(newArticulo)
+	.save()
+	.then(createdArticulo => {
+		res.send(createdArticulo);
+	})
+	.catch(err => {
+		console.log(err);
+		res.sendStatus(500);
+	})
 
 	
 }

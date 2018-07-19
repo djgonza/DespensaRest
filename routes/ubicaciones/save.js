@@ -2,17 +2,17 @@ const ubicacionesModel = require('models/ubicaciones.js');
 
 module.exports = (req, res) => {
 
-	var newUbicacion = new ubicacionesModel(req.body);
+	var newUbicacion = req.body;
+	newUbicacion.user = req.userId;
 
-	newUbicacion
-		.save()
-		.then(createdUbicacion => {
-			res.send(createdUbicacion);
-		})
-		.catch(err => {
-			console.log(err);
-			res.send(err);
-		})
-
+	new ubicacionesModel(newUbicacion)
+	.save()
+	.then(createdUbicacion => {
+		res.send(createdUbicacion);
+	})
+	.catch(err => {
+		console.log(err);
+		res.sendStatus(500);
+	})
 	
 }

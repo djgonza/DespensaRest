@@ -4,22 +4,11 @@ const articulosModel = require('models/articulos.js');
 
 module.exports = (req, res) => {
 
-	productoModel.find({})
+	productoModel.find({'user': req.userId})
 	.lean()
 	.exec()
 	.then(productos => {
 		return productos;
-		/*return bluebird.map(productos, (producto) => {
-			return articulosModel
-				.find({producto: producto._id})
-				.sort({'fechaCaducidad': 1})
-				.lean()
-				.exec()
-				.then(articulos => {
-					producto.articulos = articulos;
-					return producto;
-				});
-		});*/
 	})
 	.then(productos => {
 		res.send(productos)

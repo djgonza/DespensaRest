@@ -2,5 +2,11 @@
 	"staticContent": "/public",
 	"imagesPath": "public/images/",
 	"maxJsonFileAccept": "10mb",
-	"databaseString": "mongodb://admin:GXHzbuK1Foz5cdyB@despensa-shard-00-00-hiudf.mongodb.net:27017,despensa-shard-00-01-hiudf.mongodb.net:27017,despensa-shard-00-02-hiudf.mongodb.net:27017/Despensa?ssl=true&replicaSet=Despensa-shard-0&authSource=admin"
+	"databaseString": "mongodb://aplication:aplication*1@cluster0-shard-00-00-8xwkf.mongodb.net:27017,cluster0-shard-00-01-8xwkf.mongodb.net:27017,cluster0-shard-00-02-8xwkf.mongodb.net:27017/Despensa?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin",
+	"domain": "despensarest",
+	"tokenService": {
+		"host": "localhost",
+		"path": "/token/validateAccessToken",
+		"port": "3600"
+	}
 }

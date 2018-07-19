@@ -2,7 +2,7 @@ const ubicacionesModel = require('models/ubicaciones.js');
 
 module.exports = (req, res) => {
 
-	ubicacionesModel.find({})
+	ubicacionesModel.find({"user": req.userId})
 	.lean()
 	.exec()
 	.then(ubicaciones => {

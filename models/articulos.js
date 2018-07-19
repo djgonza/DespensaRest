@@ -5,7 +5,8 @@ const Articulos = mongoose.model('Articulos',
 	fechaCaducidad: Date,
 	ubicacion: Schema.Types.ObjectId,
 	producto: Schema.Types.ObjectId,
-	cantidad: Number
+	cantidad: Number,
+	user: Schema.Types.ObjectId
 });
 
 module.exports = Articulos;

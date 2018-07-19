@@ -5,7 +5,8 @@ const Producto = mongoose.model('Producto',
 	nombre: String,
 	codigo: String,
 	descripcion: String,
-	imagen: String
+	imagen: Schema.Types.ObjectId,
+	user: Schema.Types.ObjectId
 });
 
 module.exports = Producto;

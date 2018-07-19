@@ -9,6 +9,6 @@ module.exports = (req, res) => {
 		})
 		.catch(err => {
 			console.log("Error: ".red,  err.message.red);
-			res.send(err.message);
+			res.sendStatus(500);
 		})
 }
